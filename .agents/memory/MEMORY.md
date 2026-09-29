@@ -1,0 +1,1 @@
+- [PDF processing](pdf-processing-quirk.md) — use an isolated uv environment when PyMuPDF is unavailable in the managed Python.

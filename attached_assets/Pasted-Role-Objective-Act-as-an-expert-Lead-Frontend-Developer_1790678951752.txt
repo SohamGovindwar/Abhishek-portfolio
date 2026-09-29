@@ -1,0 +1,43 @@
+Role & Objective:
+
+Act as an expert Lead Frontend Developer and UI/UX Designer. Redesign my portfolio website to make it feel highly interactive, modern, engaging, and fully responsive across all device sizes (mobile, tablet, desktop, ultra-wide screens).
+
+Design & Interaction Upgrades:
+
+Hero Section & Motion:
+
+Add subtle, high-end micro-interactions (e.g., fluid hover effects on buttons/cards, subtle entrance animations using Framer Motion/GSAP).
+
+Make the hero section more dynamic with a subtle gradient canvas background, interactive tech badges, or a live status pill.
+
+Interactive Components:
+
+Metrics Grid: Make the key stats (e.g., "250+ projects delivered") animate using count-up counters when scrolled into view.
+
+Interactive Tabs / Filter: Enhance the "Selected Work" section with smooth filter animations (e.g., dynamic tab switching between All, Salesforce, and AI Delivery).
+
+Experience Timeline: Transform the experience section into an interactive vertical or expandable timeline card with clear hover states and visual hierarchy.
+
+Interactive Credentials Cards: Turn certifications and awards into modern, glassmorphism-style cards with subtle 3D tilt or glowing hover effects.
+
+Navigation & Mobile UX:
+
+Implement a slick floating glassmorphism navbar on desktop.
+
+Add a full-screen or sliding mobile drawer navigation with smooth toggle animations and touch-friendly targets.
+
+Responsive Layout & Typography:
+
+Use CSS Grid and Flexbox with dynamic fluid typography (e.g., clamp()) so scale seamlessly from smartphones (320px) to widescreen displays.
+
+Ensure touch targets (buttons, links, form inputs) are optimized for mobile tapping with comfortable padding and spacing.
+
+Contact Section:
+
+Add interactive form validation states (focused, valid, floating labels, success state animation upon submission).
+
+Theme & Visual Aesthetics:
+
+Refine the aesthetic with crisp glassmorphism cards, subtle drop shadows, refined borders, and a clean dark/light toggle option.
+
+Please rewrite the full layout and code (HTML/Tailwind CSS/React or modern CSS/JS) step-by-step or provide the complete updated code block.
