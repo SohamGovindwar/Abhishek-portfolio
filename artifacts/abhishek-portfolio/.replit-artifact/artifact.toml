@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Abhishek Govindwar — Salesforce Portfolio"
+description = "A premium professional portfolio for Abhishek Sanjay Govindwar, showcasing Salesforce onboarding, implementation, administration, Agentforce, AI solutions, projects, certifications, and career experience for recruiters and enterprise teams."
+version = "1.0.0"
+id = "artifacts/abhishek-portfolio"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22982
+
+[services.development]
+run = "pnpm --filter @workspace/abhishek-portfolio run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/abhishek-portfolio", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/abhishek-portfolio/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22982"
+BASE_PATH = "/"

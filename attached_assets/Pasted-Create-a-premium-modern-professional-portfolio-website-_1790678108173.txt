@@ -1,0 +1,690 @@
+Create a premium, modern, professional portfolio website for a Salesforce Developer.
+
+## IMPORTANT — RESUME AS THE PRIMARY DATA SOURCE
+
+The user will upload a resume along with this request.
+
+Before generating the website:
+
+1. Read and analyze the entire uploaded resume.
+2. Extract all relevant information from the resume.
+3. Use the extracted resume information to populate the portfolio automatically.
+4. Do NOT ask the user to manually enter information that is already available in the resume.
+5. Do NOT invent, assume, or fabricate any information.
+6. If a section does not have enough information in the resume, either omit it or display a suitable empty state.
+7. Preserve the factual accuracy of:
+
+   * Name
+   * Job titles
+   * Companies
+   * Employment dates
+   * Education
+   * Certifications
+   * Skills
+   * Projects
+   * Responsibilities
+   * Achievements
+   * Links
+   * Contact information
+8. Do not exaggerate responsibilities, experience, technical expertise, or achievements.
+9. Where the resume contains inconsistent or duplicate information, use the most recent/current information where it is clearly identifiable.
+10. Keep the website content professional and recruiter-friendly.
+
+The uploaded resume is the **single source of truth** for personal, professional, educational, project, and certification information.
+
+---
+
+# WEBSITE PURPOSE
+
+Build a professional Salesforce Developer portfolio designed for:
+
+* Salesforce recruiters
+* Hiring managers
+* Salesforce consulting companies
+* Technical leads
+* Clients
+* Enterprise technology teams
+
+The website should function as:
+
+**Professional Portfolio + Technical Resume + Salesforce Project Showcase**
+
+The design should communicate Salesforce expertise, enterprise development, automation, integrations, and professional credibility.
+
+---
+
+# AUTOMATIC RESUME EXTRACTION
+
+Extract and structure the resume information into the following data model:
+
+### Personal Information
+
+* Full name
+* Professional title
+* Professional summary
+* Email
+* Phone if present
+* Location
+* LinkedIn
+* GitHub
+* Salesforce/Trailhead profile
+* Portfolio links
+* Other professional links
+
+### Professional Experience
+
+For every experience listed in the resume, extract:
+
+* Company
+* Job title
+* Employment type
+* Start date
+* End date
+* Location
+* Responsibilities
+* Technologies
+* Achievements
+* Projects mentioned
+
+### Skills
+
+Automatically categorize resume skills into:
+
+Salesforce
+Programming
+Frontend
+Backend
+Database
+Cloud
+DevOps
+Integration
+Tools
+Other
+
+Do not add technologies that are not present in the resume.
+
+### Projects
+
+Extract every relevant project.
+
+For each project:
+
+* Project name
+* Description
+* Problem solved
+* Responsibilities
+* Technologies
+* Features
+* Results/impact
+* GitHub
+* Live demo
+* Other links
+
+Only display information actually supported by the resume.
+
+### Education
+
+Extract:
+
+* Degree
+* Institution
+* Location
+* Start date
+* Graduation date
+* CGPA/GPA
+* Percentage
+* Relevant coursework
+* Academic achievements
+
+### Certifications
+
+Extract:
+
+* Certification name
+* Issuing organization
+* Date
+* Credential ID
+* Verification URL
+
+### Achievements
+
+Extract:
+
+* Awards
+* Hackathons
+* Recognitions
+* Salesforce achievements
+* Trailhead achievements
+* Open-source contributions
+* Other professional accomplishments
+
+---
+
+# NAVIGATION
+
+Generate navigation dynamically based on the information extracted from the resume.
+
+Possible sections:
+
+Home
+About
+Skills
+Salesforce Expertise
+Projects
+Experience
+Certifications
+Education
+Achievements
+Resume
+Contact
+
+Do not create empty sections.
+
+---
+
+# 1. HOME / HERO
+
+Automatically populate the Hero section from the resume.
+
+Display:
+
+**[Name extracted from resume]**
+
+**[Professional title extracted from resume]**
+
+Create a concise professional headline based strictly on the resume.
+
+Example structure:
+
+"Salesforce Developer specializing in Apex, Lightning Web Components, automation, integrations, and scalable CRM solutions."
+
+However, only mention technologies actually present in the resume.
+
+Buttons:
+
+* View Projects
+* Download Resume
+* Contact Me
+
+Display available professional links:
+
+LinkedIn
+GitHub
+Trailhead
+Email
+
+If a profile photo exists in the uploaded resume, optionally use it. Otherwise use a professional abstract Salesforce/developer visual.
+
+---
+
+# 2. ABOUT ME
+
+Generate the About section from the resume's:
+
+* Professional summary
+* Career experience
+* Skills
+* Projects
+
+Create a polished 2–4 paragraph professional introduction.
+
+Do not introduce new claims.
+
+Add a "Quick Facts" area using only resume information:
+
+Experience
+Primary Role
+Primary Technologies
+Location
+Education
+Certifications
+
+---
+
+# 3. SALESFORCE EXPERTISE
+
+Analyze the resume and identify Salesforce-specific technologies.
+
+Automatically organize them into categories such as:
+
+### Salesforce Development
+
+Apex
+Triggers
+Apex Classes
+Async Apex
+Lightning Web Components
+Aura
+
+### Data
+
+SOQL
+SOSL
+Data Loader
+Data Modeling
+
+### Automation
+
+Salesforce Flow
+Validation Rules
+Approval Processes
+Process Automation
+
+### Integration
+
+REST API
+SOAP API
+HTTP Callouts
+Named Credentials
+Platform Events
+
+### Security
+
+Profiles
+Permission Sets
+Roles
+Sharing Rules
+OWD
+Field-Level Security
+
+IMPORTANT:
+
+Only show technologies explicitly present in the resume.
+
+If the resume does not mention a particular technology, do not add it just because it is commonly used by Salesforce Developers.
+
+---
+
+# 4. SKILLS
+
+Create a complete Skills section using the extracted resume information.
+
+Automatically group technologies logically.
+
+Use:
+
+* Technology icons
+* Compact cards
+* Tags
+* Clean category sections
+
+Do NOT use fake proficiency percentages.
+
+Do NOT rank skills unless the resume explicitly provides proficiency levels.
+
+---
+
+# 5. FEATURED PROJECTS
+
+Automatically extract the strongest projects from the resume.
+
+Prioritize projects based on:
+
+1. Relevance to Salesforce
+2. Technical complexity
+3. Professional experience
+4. Business impact
+5. Amount of information available
+
+For each project display:
+
+Project name
+Short description
+Technologies
+Responsibilities
+Key features
+Business impact
+GitHub
+Live demo
+
+If sufficient information exists, create a detailed case-study view.
+
+---
+
+# 6. PROJECT CASE STUDY
+
+When a project is opened, show:
+
+Overview
+
+Problem
+
+Solution
+
+My Role
+
+Technology Stack
+
+Architecture
+
+Implementation
+
+Automation
+
+Integrations
+
+Results
+
+Links
+
+Only display subsections for which information exists in the resume.
+
+Never invent architecture, metrics, business results, or responsibilities.
+
+---
+
+# 7. CAREER TIMELINE
+
+Create an elegant vertical career timeline automatically from the Professional Experience section of the resume.
+
+Each entry should show:
+
+Company
+Role
+Start date
+End date
+Location
+Key responsibilities
+Technologies
+Achievements
+
+Sort chronologically.
+
+Highlight the current/latest role prominently.
+
+---
+
+# 8. CERTIFICATIONS
+
+Automatically create this section if certifications exist in the resume.
+
+Each certification card:
+
+Certification name
+Issuing organization
+Date
+Credential ID
+Verification link
+
+If there are no certifications, do not display an empty certification section.
+
+---
+
+# 9. EDUCATION
+
+Extract education information from the resume.
+
+Display:
+
+Degree
+Institution
+Location
+Graduation year
+CGPA/GPA
+Relevant information
+
+Use a clean timeline/card layout.
+
+---
+
+# 10. ACHIEVEMENTS
+
+Automatically create this section only when relevant information exists.
+
+Possible categories:
+
+Awards
+Hackathons
+Recognitions
+Salesforce achievements
+Trailhead achievements
+Open-source contributions
+Professional milestones
+
+Never fabricate achievements.
+
+---
+
+# 11. SALESFORCE / TRAILHEAD PROFILE
+
+If the resume contains a Salesforce or Trailhead profile URL:
+
+Display a dedicated profile card.
+
+Include:
+
+Trailhead profile
+Salesforce credentials
+Badges
+Superbadges
+
+If the resume does not contain such a profile, do not invent a URL or statistics.
+
+---
+
+# 12. RESUME
+
+Create a dedicated Resume section.
+
+Include:
+
+"View Resume"
+
+"Download Resume"
+
+Use the uploaded resume as the downloadable resume.
+
+Do not modify factual information in the original resume.
+
+Optionally provide an embedded PDF preview.
+
+---
+
+# 13. CONTACT
+
+Automatically populate available contact information from the resume.
+
+Display:
+
+Email
+Phone if provided
+LinkedIn
+GitHub
+Trailhead
+Location
+
+Create a contact form:
+
+Name
+Email
+Subject
+Message
+
+Button:
+
+Send Message
+
+Do not expose sensitive personal information unnecessarily.
+
+---
+
+# DESIGN
+
+Create a premium enterprise-style Salesforce developer aesthetic.
+
+Use:
+
+* Modern typography
+* Excellent spacing
+* Clean cards
+* Subtle Salesforce-inspired blue accents
+* Dark/light mode
+* Soft gradients
+* Minimal shadows
+* Subtle animations
+* Professional icons
+* Responsive layout
+* Mobile-first design
+
+Avoid:
+
+* Excessive animations
+* Neon colors
+* Overly flashy effects
+* Excessive glassmorphism
+* Fake statistics
+* Generic portfolio-template appearance
+* Fake skill percentages
+
+The website should look like it was designed by a professional Salesforce engineer.
+
+---
+
+# RESPONSIVE DESIGN
+
+The website must work perfectly on:
+
+Desktop
+Laptop
+Tablet
+Mobile
+
+Use responsive layouts for:
+
+Navigation
+Hero
+Project cards
+Timeline
+Skills
+Certifications
+Contact
+
+---
+
+# INTERACTIONS
+
+Implement:
+
+* Smooth scrolling
+* Sticky navbar
+* Active navigation state
+* Subtle section animations
+* Project filtering
+* Project detail modal/page
+* Dark/light mode
+* Copy email button
+* Back-to-top button
+* Mobile navigation
+* Resume download
+* Contact form validation
+
+Respect `prefers-reduced-motion`.
+
+---
+
+# TECHNICAL STACK
+
+Use:
+
+Next.js
+React
+TypeScript
+Tailwind CSS
+shadcn/ui
+Lucide icons
+
+Use reusable components.
+
+Suggested architecture:
+
+Navbar
+Hero
+About
+Skills
+SalesforceExpertise
+Projects
+ProjectCard
+ProjectCaseStudy
+ExperienceTimeline
+Certifications
+Education
+Achievements
+Trailhead
+Resume
+Contact
+Footer
+
+Store extracted resume information in structured data objects so the portfolio can easily be updated later.
+
+---
+
+# SEO
+
+Generate metadata dynamically from the resume.
+
+Title:
+
+[NAME] | [PROFESSIONAL TITLE]
+
+Description:
+
+Create a concise SEO-friendly description based on the resume.
+
+Also generate:
+
+Open Graph title
+Open Graph description
+Open Graph image
+Favicon
+Relevant keywords
+
+Do not add keywords that are unrelated to the resume.
+
+---
+
+# DATA ACCURACY RULE
+
+This is extremely important:
+
+The uploaded resume is the source of truth.
+
+Never fabricate:
+
+* Companies
+* Job titles
+* Years of experience
+* Certifications
+* Salesforce skills
+* Projects
+* Clients
+* Achievements
+* Salary
+* Education
+* Technical expertise
+* Project metrics
+* Business results
+* Links
+
+If information is missing, do not guess.
+
+Instead, gracefully omit that information.
+
+---
+
+# FINAL EXPERIENCE
+
+A recruiter should understand within approximately 10 seconds:
+
+Who this developer is
+What Salesforce expertise they have
+What technologies they use
+Where they have worked
+What projects they have built
+What certifications they hold
+How to contact them
+
+The final result should feel like:
+
+**Salesforce Developer Portfolio + Technical Resume + Enterprise Case Study**
+
+Prioritize factual accuracy, recruiter readability, technical credibility, accessibility, performance, and professional presentation.

@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --font-sans: var(--app-font-sans);
+  --font-mono: var(--app-font-mono);
+  --radius-lg: 1rem;
+  --radius-xl: 1.35rem;
+}
+
+:root {
+  --background: 210 33% 97%;
+  --foreground: 215 43% 15%;
+  --border: 210 25% 86%;
+  --input: 210 25% 86%;
+  --ring: 200 94% 44%;
+  --card: 0 0% 100%;
+  --card-foreground: 215 43% 15%;
+  --card-border: 210 25% 86%;
+  --primary: 200 94% 39%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 190 27% 91%;
+  --secondary-foreground: 200 60% 24%;
+  --muted: 210 24% 93%;
+  --muted-foreground: 215 17% 42%;
+  --accent: 37 92% 58%;
+  --accent-foreground: 30 50% 18%;
+  --app-font-sans: 'Manrope', sans-serif;
+  --app-font-mono: 'DM Mono', monospace;
+  --radius: 0.8rem;
+}
+
+.dark {
+  --background: 215 42% 10%;
+  --foreground: 210 24% 93%;
+  --border: 213 27% 25%;
+  --input: 213 27% 25%;
+  --ring: 196 100% 56%;
+  --card: 215 38% 14%;
+  --card-foreground: 210 24% 93%;
+  --card-border: 213 27% 25%;
+  --primary: 196 100% 56%;
+  --primary-foreground: 215 45% 10%;
+  --secondary: 214 30% 21%;
+  --secondary-foreground: 190 70% 85%;
+  --muted: 214 30% 18%;
+  --muted-foreground: 213 17% 67%;
+  --accent: 39 94% 62%;
+  --accent-foreground: 30 52% 13%;
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    min-width: 320px;
+  }
+  ::selection { background: hsl(var(--primary) / .2); }
+}
+
+@layer utilities {
+  .font-display { font-family: 'Space Grotesk', sans-serif; }
+  .font-mono-app { font-family: var(--app-font-mono); }
+  .section-shell { width: min(1180px, calc(100% - 2.5rem)); margin-inline: auto; }
+  .text-balance { text-wrap: balance; }
+  .hairline { border-color: hsl(var(--border) / .75); }
+}
+
+:root::before {
+  content: '';
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  opacity: .035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+}
+
+.site-grid {
+  background-image: linear-gradient(hsl(var(--primary) / .045) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary) / .045) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.reveal { animation: reveal .7s cubic-bezier(.22,.75,.25,1) both; }
+.reveal-delay-1 { animation-delay: .12s; }
+.reveal-delay-2 { animation-delay: .22s; }
+.reveal-delay-3 { animation-delay: .32s; }
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
